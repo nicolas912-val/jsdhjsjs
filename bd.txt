@@ -1,0 +1,41 @@
+-- Crear tabla de usuarios
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+-- Crear tabla de perros disponibles para adopción
+CREATE TABLE perros (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT NOT NULL,
+    imagen VARCHAR(255) NOT NULL
+);
+
+-- Crear tabla de accesorios
+CREATE TABLE accesorios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT NOT NULL,
+    imagen VARCHAR(255) NOT NULL
+);
+
+-- Poblar tabla de usuarios con datos de ejemplo
+INSERT INTO usuarios (nombre, email, password) VALUES
+('Juan Pérez', 'juan@example.com', 'password1'),
+('María López', 'maria@example.com', 'password2'),
+('Carlos Ruiz', 'carlos@example.com', 'password3');
+
+-- Poblar tabla de perros con datos de ejemplo
+INSERT INTO perros (nombre, descripcion, imagen) VALUES
+('Max', 'Un perro muy amigable y juguetón.', 'images/dog1.jpg'),
+('Luna', 'Una perra muy cariñosa y leal.', 'images/dog2.jpg'),
+('Rocky', 'Un perro enérgico y valiente.', 'images/dog3.jpg');
+
+-- Poblar tabla de accesorios con datos de ejemplo
+INSERT INTO accesorios (nombre, descripcion, imagen) VALUES
+('Collar', 'Un collar cómodo y ajustable.', 'images/accessory1.jpg'),
+('Cama', 'Una cama suave y acogedora para perros.', 'images/accessory2.jpg'),
+('Juguete', 'Un juguete divertido para perros.', 'images/accessory3.jpg');
